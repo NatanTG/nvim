@@ -150,6 +150,18 @@ vim.lsp.config.tflint = {
   capabilities = M.capabilities,
 }
 
+vim.lsp.config.dockerls = {
+  on_init = M.on_init,
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+vim.lsp.config.docker_compose_language_service = {
+  on_init = M.on_init,
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
 -- Habilita os LSP servers
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("gopls")
@@ -160,6 +172,8 @@ vim.lsp.enable("cssls")
 vim.lsp.enable("pyright")
 vim.lsp.enable("terraformls")
 vim.lsp.enable("tflint")
+vim.lsp.enable("dockerls")
+vim.lsp.enable("docker_compose_language_service")
 
 -- Auto-import e format ao salvar arquivos Go
 vim.api.nvim_create_autocmd("BufWritePre", {
