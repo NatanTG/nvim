@@ -162,6 +162,26 @@ vim.lsp.config.docker_compose_language_service = {
   capabilities = M.capabilities,
 }
 
+vim.lsp.config.yamlls = {
+  on_init = M.on_init,
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  settings = {
+    yaml = {
+      schemas = {
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+        ["https://json.schemastore.org/github-action.json"] = "/.github/actions/*",
+        ["https://json.schemastore.org/kustomization.json"] = "kustomization.yaml",
+        ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose*.yml",
+        kubernetes = "k8s/**/*.yaml",
+      },
+      validate = true,
+      completion = true,
+      hover = true,
+    },
+  },
+}
+
 -- Habilita os LSP servers
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("gopls")
@@ -174,6 +194,7 @@ vim.lsp.enable("terraformls")
 vim.lsp.enable("tflint")
 vim.lsp.enable("dockerls")
 vim.lsp.enable("docker_compose_language_service")
+vim.lsp.enable("yamlls")
 
 -- Auto-import e format ao salvar arquivos Go
 vim.api.nvim_create_autocmd("BufWritePre", {
