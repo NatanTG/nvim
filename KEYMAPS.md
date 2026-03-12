@@ -395,6 +395,114 @@
 
 ---
 
+## Git Avançado (Lazygit)
+
+| Tecla | Ação |
+|-------|------|
+| `<leader>gg` | Abrir Lazygit |
+| `<leader>td` | Toggle linhas deletadas |
+
+---
+
+## Docker (Lazydocker)
+
+| Tecla | Ação |
+|-------|------|
+| `<leader>ld` | Abrir Lazydocker |
+
+---
+
+## Go
+
+| Tecla | Ação |
+|-------|------|
+| `<leader>gr` | `go run` arquivo atual |
+| `<leader>gR` | `go run .` |
+| `<leader>gT` | `go test ./...` |
+| `<leader>gB` | `go build .` |
+
+---
+
+## Flutter
+
+| Tecla | Ação |
+|-------|------|
+| `<leader>fr` | `flutter run` |
+| `<leader>fR` | `flutter run --release` |
+| `<leader>fT` | `flutter test` |
+| `<leader>fB` | `flutter build apk` |
+| `<leader>fc` | `flutter clean` |
+| `<leader>fp` | `flutter pub get` |
+
+---
+
+## Node / Package Managers
+
+> Padrão: `j` + gerenciador (`n/p/y/b`) + ação (`R/T/B/i`)
+
+| Tecla | Ação |
+|-------|------|
+| `<leader>jr` | `node` arquivo atual |
+| | |
+| `<leader>jnR` | `npm run dev` |
+| `<leader>jnT` | `npm test` |
+| `<leader>jnB` | `npm run build` |
+| `<leader>jni` | `npm install` |
+| | |
+| `<leader>jpR` | `pnpm run dev` |
+| `<leader>jpT` | `pnpm test` |
+| `<leader>jpB` | `pnpm run build` |
+| `<leader>jpi` | `pnpm install` |
+| | |
+| `<leader>jyR` | `yarn dev` |
+| `<leader>jyT` | `yarn test` |
+| `<leader>jyB` | `yarn build` |
+| `<leader>jyi` | `yarn install` |
+| | |
+| `<leader>jbR` | `bun run dev` |
+| `<leader>jbT` | `bun test` |
+| `<leader>jbB` | `bun run build` |
+| `<leader>jbi` | `bun install` |
+
+---
+
+## AI Autocomplete (Supermaven)
+
+| Tecla | Ação |
+|-------|------|
+| `Tab` | Aceitar sugestão |
+| `Ctrl+j` | Aceitar próxima palavra |
+| `Ctrl+]` | Limpar sugestão |
+| `<leader>tc` | Toggle autocomplete |
+
+---
+
+## WezTerm
+
+| Tecla | Ação |
+|-------|------|
+| `Cmd+t` | Nova aba |
+| `Cmd+d` | Split horizontal |
+| `Cmd+Shift+d` | Split vertical |
+| `Cmd+Opt+Setas` | Navegar entre painéis |
+| `Cmd+w` | Fechar painel/aba |
+| `Cmd+=` | Aumentar fonte |
+| `Cmd+-` | Diminuir fonte |
+| `Cmd+0` | Resetar fonte |
+
+---
+
+## Terminal — Aliases Flutter
+
+```bash
+ios        # Abre iOS Simulator + flutter run
+android    # Abre Android (Medium Phone) + flutter run
+emulators  # Lista emuladores disponíveis
+devices    # Lista devices conectados
+```
+
+---
+
 ## Workflow Recomendado
 
 1. **Abrir projeto:** `nvim .` no terminal
