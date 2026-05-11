@@ -45,6 +45,22 @@ vim.lsp.config.ts_ls = {
   on_init = M.on_init,
   on_attach = M.on_attach,
   capabilities = M.capabilities,
+  settings = {
+    typescript = {
+      preferences = {
+        importModuleSpecifierEnding = "auto",
+        includeCompletionsForImportStatements = true,
+        includeCompletionsForModuleExports = true,
+      },
+    },
+    javascript = {
+      preferences = {
+        importModuleSpecifierEnding = "auto",
+        includeCompletionsForImportStatements = true,
+        includeCompletionsForModuleExports = true,
+      },
+    },
+  },
 }
 
 vim.lsp.config.gopls = {

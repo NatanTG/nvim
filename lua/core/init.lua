@@ -22,6 +22,7 @@ opt.smartindent = true
 opt.tabstop = 2
 opt.softtabstop = 2
 
+opt.textwidth = 105
 opt.fillchars = { eob = " " }
 opt.ignorecase = true
 opt.smartcase = true
@@ -69,6 +70,15 @@ autocmd("FileType", {
   pattern = "qf",
   callback = function()
     vim.opt_local.buflisted = false
+  end,
+})
+
+-- Forçar quebra de linha aos 105 caracteres em arquivos de código
+autocmd("FileType", {
+  pattern = { "typescript", "typescriptreact", "javascript", "javascriptreact", "go", "python", "lua" },
+  callback = function()
+    vim.opt_local.textwidth = 105
+    vim.opt_local.formatoptions:append "t"
   end,
 })
 

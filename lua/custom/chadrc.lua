@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-  theme = 'onedark',
+  theme = 'radium',
   lsp_semantic_tokens = true,
   transparency = true,
 }

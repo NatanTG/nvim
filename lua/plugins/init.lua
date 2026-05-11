@@ -376,6 +376,51 @@ local default_plugins = {
     end,
   },
 
+  -- Debug (DAP)
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
+    },
+    keys = {
+      { "<leader>db", desc = "Toggle breakpoint" },
+      { "<leader>dc", desc = "Continue" },
+      { "<leader>do", desc = "Step over" },
+      { "<leader>di", desc = "Step into" },
+      { "<leader>dO", desc = "Step out" },
+      { "<leader>du", desc = "Toggle DAP UI" },
+      { "<leader>dt", desc = "Terminate" },
+    },
+    config = function()
+      require "plugins.configs.dap"
+
+      local dap = require("dap")
+      local dapui = require("dapui")
+
+      vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
+      vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Continue" })
+      vim.keymap.set("n", "<leader>do", dap.step_over, { desc = "Step over" })
+      vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "Step into" })
+      vim.keymap.set("n", "<leader>dO", dap.step_out, { desc = "Step out" })
+      vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "Toggle DAP UI" })
+      vim.keymap.set("n", "<leader>dt", dap.terminate, { desc = "Terminate debug" })
+    end,
+  },
+
+  -- LSP CodeLens (references, implementations, etc)
+  {
+    "VidocqH/lsp-lens.nvim",
+    event = "LspAttach",
+    opts = {
+      sections = {
+        definition = false,
+        references = true,
+        implements = true,
+      },
+    },
+  },
+
   -- AI autocomplete
   {
     "supermaven-inc/supermaven-nvim",
